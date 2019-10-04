@@ -2,6 +2,13 @@
 
 Use to convert CBR files to PDF
 
+## Install
+```
+go get github.com/rwn3120/cbr2pdf
+
+go install github.com/rwn3120/cbr2pdf
+```
+
 ## Usage
 ```
 cbr2pdf - an utility for converting CBR to PDF. Default resolution is 1072x1448 (Pocketbook Touch HD 3)
