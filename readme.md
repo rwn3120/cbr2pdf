@@ -1,12 +1,14 @@
-# crb2pdf
+# cbr2pdf (cbz2pdf)
 
-Use to convert CBR files to PDF
+Use to convert CBR and CBZ files to PDF
 
 ## Install
 ```
 go get github.com/rwn3120/cbr2pdf
 
 go install github.com/rwn3120/cbr2pdf
+
+ln -s "${GOPATH}/bin/cbr2pdf" "${GOPATH}/bin/cbz2pdf"
 ```
 
 ## Usage

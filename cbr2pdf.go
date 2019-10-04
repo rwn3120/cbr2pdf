@@ -151,7 +151,7 @@ func parseArgs(args []string) (string, string, error) {
 		if arg == "-h" || arg == "--help" || arg == "-?" {
 			filename := filepath.Base(args[0])
 			fmt.Printf(
-				"%s - an utility for converting CBR to PDF.\n\n"+
+				"%s - an utility for converting CBR/CBZ to PDF.\n\n"+
 					"Usage: %s <source file> [destination file]\n\n"+
 					"Environment:    WIDTH  ... X resolution of your reader (default %d)\n"+
 					"                HEIGHT ... Y resolution of your reader (default %d)\n\n\n"+
