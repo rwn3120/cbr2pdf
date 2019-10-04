@@ -97,7 +97,7 @@ func findImages(location string) ([]string, error) {
 			if err != nil {
 				return err
 			}
-			if strings.EqualFold(".jpg", path.Ext(file)) {
+			if strings.EqualFold(".jpg", path.Ext(file)) || strings.EqualFold(".jpeg", path.Ext(file)) {
 				images = append(images, file)
 			}
 			return nil
