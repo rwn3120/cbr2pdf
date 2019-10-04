@@ -1,6 +1,6 @@
 # crb2pdf
 
-Use to convert CRB files to PDF
+Use to convert CBR files to PDF
 
 ## Usage
 ```
