@@ -114,6 +114,7 @@ func Convert(src, dst string) error {
 		return errors.New("Source file must not be equal to destination file")
 	}
 	// extract files
+	fmt.Printf("Decompresing %s\n", src)
 	tmpDir, err := ioutil.TempDir(os.TempDir(), filepath.Base(src))
 	if err != nil {
 		return err
@@ -135,14 +136,15 @@ func Convert(src, dst string) error {
 	pdf.Start(gopdf.Config{})
 	// add images to pdf
 	for index, image := range images {
-		fmt.Printf("Processing image %s (%d/%d)...\r", image, index+1, len(images))
+		percentage := int(float64(index+1) / float64(len(images)) * 100)
+		fmt.Printf("Indexing images %3d%%\r", percentage)
 		if err := imgToPdf(image, pdf); err != nil {
 			fmt.Printf("\nFailed to add image %s (%d/%d)!\n", image, index+1, len(images))
 			return err
 		}
 	}
 	// create pdf
-	fmt.Printf("\nPlease wait - generating %s\n", dst)
+	fmt.Printf("\nGenerating %s\n", dst)
 	return pdf.WritePdf(dst)
 }
 
